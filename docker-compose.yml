@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
       args:
         - DEV=true
-    # command: python manage.py runserver 0.0.0.0:8000
+    command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - ./openai_service:/app
     ports:
