@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  openai_service:
+    build:
+      context: ./openai_service
+      dockerfile: Dockerfile
+      args:
+        - DEV=true
+    # command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./openai_service:/app
+    ports:
+      - "8000:8000"
