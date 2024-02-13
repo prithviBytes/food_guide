@@ -12,3 +12,15 @@ services:
       - ./openai_service:/app
     ports:
       - "8000:8000"
+
+  zomato_service:
+    build:
+      context: ./zomato_service
+      dockerfile: Dockerfile
+      args:
+        - DEV=true
+    command: python manage.py runserver 0.0.0.0:8001
+    volumes:
+      - ./zomato_service:/app
+    ports:
+      - "8001:8001"
