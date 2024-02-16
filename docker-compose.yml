@@ -1,17 +1,13 @@
 version: '3'
 
 services:
-  openai_service:
-    build:
-      context: ./openai_service
-      dockerfile: Dockerfile
-      args:
-        - DEV=true
-    command: python manage.py runserver 0.0.0.0:8000
-    volumes:
-      - ./openai_service:/app
+  localai:
+    image: localai/localai:v2.7.0-ffmpeg-core
     ports:
-      - "8000:8000"
+      - "8080:8080"
+    volumes:
+      - "C:/Users/acer/Desktop/Codes/models:/models"
+    command: ["--models-path", "/models", "--context-size", "700", "--threads", "4"]
 
   zomato_service:
     build:
