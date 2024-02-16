@@ -46,12 +46,3 @@ db.sqlite3
 .env.test
 .env.production
 
-# Ignore react related files
-node_modules
-npm-debug.log
-build
-.dockerignore
-.git
-.gitignore
-*.md
-*.markdown
